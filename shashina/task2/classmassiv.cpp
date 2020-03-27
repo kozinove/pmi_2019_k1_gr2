@@ -23,9 +23,9 @@ public:
     {
         arr = new int[copy.size];
         if (!arr) return;
-        size = copy.size;
         for(int i = 0;i<copy.size;i++)
         arr[i]=copy.arr[i];
+        size = copy.size;
     }
 };
 
