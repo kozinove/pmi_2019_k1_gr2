@@ -3,79 +3,45 @@
 
 using namespace std;
 
-const void empty::voice ()
-{
-    cout << " no one is here \n";
-}
-
-const bool empty::_empty ()
-{
-    return true;
-}
-
-const void horse::voice ()
+void horse::voice ()
 {
     cout << "'neigh' - horse\n";
 }
 
-const bool horse::_empty ()
-{
-    return true;
-}
-
-const void donkey::voice ()
+void donkey::voice ()
 {
     cout << "'hee-haw' - donkey\n";
 }
 
-const bool donkey::_empty ()
-{
-    return true;
-}
-
-const void owl::voice ()
+void owl::voice()
 {
     cout << "'hoot' - owl\n";
 }
 
-const bool owl::_empty ()
+void cell::animalzoo(animals *animal)
 {
-    return true;
+    if (f)
+    {
+        beast = animal;
+        f = false;
+    }
 }
 
-const void lion::voice ()
+void cell::voice()
 {
-    cout << "'roar' - lion\n";
+    if (f)
+           cout << "no one is here \n";
+    if (!f)
+        (* beast).voice();
 }
 
-const bool lion::_empty ()
-{
-    return true;
-}
+zoo::zoo(){}
 
-zoo::zoo (empty &e)
+void zoo::wolk()
 {
-     for (int i = 0; i < 10; i++)
-         animals [i] = &e;
-}
-
-void zoo::animalszoo (cell *animal, const int &p)
-{
-      if ((*animals[p])._empty())
-         animals [p] = animal;
-}
-
-const void zoo::voicezoo (const int &p)
-{
-      (*animals[p]).voice();
-}
-
-void who (zoo &_zoo)
-{
-   for (int i = 0; i < 10; i++)
-   {
-       cout << i+1 << " cell: ";
-       _zoo.voicezoo(i);
-   }
-    cout << "All the animals were seen!\n";
+    for (int i = 0; i < 10; i++)
+    {
+        std::cout << i+1 << " cell: ";
+        cells[i].voice();
+    }
 }

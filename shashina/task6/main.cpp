@@ -1,26 +1,30 @@
 #include "zoo.h"
-#include <iostream>
 #include <cstdlib>
+
 
 int main()
 {
-    empty e;
-    zoo _zoo(e);
-    horse h;
-    for (int i = 0; i < 5; i++)
-        _zoo.animalszoo(&h, rand() % 10);
-    donkey d;
-    for (int i = 0; i < 4; i++)
-        _zoo.animalszoo(&d, rand() % 10);
     owl o;
-    for (int i = 0; i < 3; i++)
-        _zoo.animalszoo(&o, rand() % 10);
-    lion l;
-    for (int i = 0; i < 2; i++)
-        _zoo.animalszoo(&l, rand() % 10);
+    horse h;
+    donkey d;
+    zoo z;
 
-    who (_zoo);
+    for(int i=0; i<6;i++)
+    {
+        z.cells[i+rand() % 10].animalzoo(&o);
+    }
+    \
+    for(int i=0; i<5;i++)
+     {
+         z.cells[rand() % 10].animalzoo(&h);
+     }
 
+    for(int i=0; i<7;i++)
+     {
+         z.cells[rand() % 10].animalzoo(&d);
+     }
+
+    z.wolk();
 
     return 0;
 }

@@ -1,49 +1,40 @@
 #pragma once
 
-class cell
+class animals
 {
 public:
-    virtual const void voice() = 0;
-    virtual const bool _empty() = 0;
+    virtual void voice()  = 0;
 };
 
-class empty : public cell
+class horse : public animals
 {
-    virtual const void voice();
-    virtual const bool _empty();
-};
-class horse : public cell
-{
-    virtual const void voice();
-    virtual const bool _empty();
+    virtual void voice();
 };
 
-class donkey : public cell
+class donkey : public animals
 {
-    virtual const void voice();
-    virtual const bool _empty();
+    virtual void voice();
 };
 
-class owl : public cell
+class owl : public animals
 {
-    virtual const void voice();
-    virtual const bool _empty();
+    virtual void voice();
 };
 
-class lion : public cell
+class cell
 {
-   virtual const void voice();
-   virtual const bool _empty();
+protected:
+    bool f = true;
+    animals *beast;
+public:
+    void animalzoo(animals *animal);
+    void voice();
 };
 
 class zoo
 {
 public:
-    zoo (empty &e);
-    void animalszoo (cell *animal, const int &p);
-    const void voicezoo (const int &p);
-private:
-    cell *animals[10];
+    cell cells[10];
+    zoo();
+    void wolk();
 };
-
-void who(zoo &_zoo);
