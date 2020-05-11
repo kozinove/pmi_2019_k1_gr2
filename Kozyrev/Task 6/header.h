@@ -21,13 +21,6 @@ public:
 };
 
 
-class zoo
-{
-public:
-    cage cages[10];
-};
-
-
 class lion : public animal
 {
 public:
@@ -40,6 +33,11 @@ public:
 	virtual void voice() const;
 };
 
-void checkcages(zoo& zoo);
 
-void entercages(zoo& zoo, lion& l, tiger& t);
+class zoo
+{
+	cage cages[10];
+public:
+	void entercages(lion& l, tiger& t);
+	void checkcages();
+};

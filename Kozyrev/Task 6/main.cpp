@@ -8,8 +8,8 @@ int main()
 	lion l;
 	tiger t;
 	
-	entercages(park, l, t);
-	checkcages(park);
+	park.entercages(l, t);
+	park.checkcages();
 
 	return 0;
 }

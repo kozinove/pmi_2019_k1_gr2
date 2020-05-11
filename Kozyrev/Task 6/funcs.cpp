@@ -29,26 +29,26 @@ void cage::voice() const
 }
 
 
-void entercages(zoo& zoo, lion& l, tiger& t)
+void zoo::entercages(lion& l, tiger& t)
 {
 	for (int i = 0; i < 10; i++)
 	{
 		int b = rand() % 3 + 1;
 		if (b == 1)
-			zoo.cages[i].addiction(&l);
+			cages[i].addiction(&l);
 		else
 		{
 			if (b == 2)
-				zoo.cages[i].addiction(&t);
+				cages[i].addiction(&t);
 		}
 	}
 }
 
-void checkcages(zoo& zoo)
+void zoo::checkcages()
 {
 	for (int i = 0; i < 10; i++)
 	{
-		zoo.cages[i].voice();
+		cages[i].voice();
 	}
 }
 
