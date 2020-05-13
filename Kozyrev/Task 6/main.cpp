@@ -5,10 +5,8 @@ using namespace std;
 int main()
 {
 	zoo park;
-	lion l;
-	tiger t;
-	
-	park.entercages(l, t);
+
+	park.entercages();
 	park.checkcages();
 
 	return 0;

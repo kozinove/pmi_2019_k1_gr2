@@ -29,17 +29,20 @@ void cage::voice() const
 }
 
 
-void zoo::entercages(lion& l, tiger& t)
+void zoo::entercages()
 {
-	for (int i = 0; i < 10; i++)
+	for (int i = 0; i < 15; i++)
 	{
-		int b = rand() % 3 + 1;
+		int b = rand() % 4 + 1;
 		if (b == 1)
 			cages[i].addiction(&l);
 		else
 		{
 			if (b == 2)
 				cages[i].addiction(&t);
+			else
+				if (b == 3)
+					cages[i].addiction(&r);
 		}
 	}
 }
@@ -62,3 +65,9 @@ void tiger::voice() const
 {
 	cout << "tiger \n" << endl;
 }
+
+void rabbit::voice() const
+{
+	cout << "rabbit \n" << endl;
+}
+

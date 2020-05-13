@@ -11,10 +11,9 @@ public:
 
 class cage
 {
-public:
 	animal* a;
 	bool empty;
-	
+public:
 	cage();
 	void addiction(animal* _a);
 	void voice() const;
@@ -33,11 +32,20 @@ public:
 	virtual void voice() const;
 };
 
+class rabbit : public animal
+{
+public:
+	virtual void voice() const;
+};
+
 
 class zoo
 {
-	cage cages[10];
+	lion l;
+	tiger t;
+	rabbit r;
+	cage cages[15];
 public:
-	void entercages(lion& l, tiger& t);
+	void entercages();
 	void checkcages();
 };
