@@ -174,7 +174,10 @@ void zoo::soundCage(int _num) const
 	if ((_num < 0) || (_num >= cageCount))
 		throw "Invalid value";
 	else
+	{
+		std::cout << _num << ": ";
 		cages[_num]->sound();
+	}
 }
 
 void zoo::addAnimal(animal& a, int _num)
@@ -206,6 +209,7 @@ void zoo::addCages(int _count)
 		cages = new cage * [cageCount + _count];
 		for (int i = 0; i < cageCount; i++)
 			cages[i] = temp[i];
+		cages[cageCount] = new cage;
 		cageCount += _count;
 	}
 }
@@ -227,4 +231,9 @@ void zoo::delCage(int _num)
 		for (int i = 0; i < cageCount; i++)
 			cages[i] = temp[i];
 	}
+}
+
+int zoo::getCount() const
+{
+	return cageCount;
 }

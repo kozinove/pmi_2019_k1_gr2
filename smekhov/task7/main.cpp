@@ -2,17 +2,20 @@
 #include <stdlib.h>
 #include <iostream>
 
-void wolk(const zoo& z)
+void wolk(const zoo& z, int _num)
 {
-	for (int i = 0; i < 10; i++)
-		z.soundCage(i);
+	if ((_num < 0) || (_num > z.getCount()))
+		throw "Invalid value";
+	else
+		for (int i = 0; i < _num; i++)
+			z.soundCage(i);
 }
 
-void tryAddAnimal(zoo& z, animal& a)
+void tryAddAnimal(zoo& z, animal& a, int _num)
 {
 		try
 		{
-			z.addAnimal(a, rand() % 10);
+			z.addAnimal(a, _num);
 		}
 		catch (const char* str)
 		{
@@ -64,13 +67,20 @@ int main()
 	elephant e;
 	zoo z(10, 2);
 	for (int i = 0; i < 5; i++)
-		tryAddAnimal(z, r);
+		tryAddAnimal(z, r, rand() % 10);
 	for (int i = 0; i < 2; i++)
-		tryAddAnimal(z, w);
+		tryAddAnimal(z, w, rand() % 10);
 	for (int i = 0; i < 2; i++)
-		tryAddAnimal(z, t);
+		tryAddAnimal(z, t, rand() % 10);
 	for (int i = 0; i < 1; i++)
-		tryAddAnimal(z, e);
-	wolk(z);
+		tryAddAnimal(z, e, 9);
+	try
+	{
+		wolk(z, 10);
+	}
+	catch (const char* str)
+	{
+		std::cout << str;
+	}
 	return 0;
 }

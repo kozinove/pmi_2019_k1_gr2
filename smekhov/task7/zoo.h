@@ -73,4 +73,5 @@ public:
 	void addCages(int _count = 1);
 	void soundCage(int _num) const;
 	void delCage(int _num);
+	int getCount() const;
 };
