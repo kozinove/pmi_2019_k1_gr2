@@ -5,14 +5,14 @@
 void wolk(const zoo& z)
 {
 	for (int i = 0; i < 10; i++)
-		z.cages[i]->sound();
+		z.soundCage(i);
 }
 
-void tryAddAnimal(zoo& z, animal* a)
+void tryAddAnimal(zoo& z, animal& a)
 {
 		try
 		{
-			z.cages[rand() % 10]->addAnimal(a);
+			z.addAnimal(a, rand() % 10);
 		}
 		catch (const char* str)
 		{
@@ -24,7 +24,7 @@ void tryChangeSizeCage(zoo& z, int _cage, int _size)
 {
 	try
 	{
-		z.cages[_cage]->changeSize(_size);
+		z.changeSize(_cage, _size);
 	}
 	catch (const char* str)
 	{
@@ -64,13 +64,13 @@ int main()
 	elephant e;
 	zoo z(10, 2);
 	for (int i = 0; i < 5; i++)
-		tryAddAnimal(z, &r);
+		tryAddAnimal(z, r);
 	for (int i = 0; i < 2; i++)
-		tryAddAnimal(z, &w);
+		tryAddAnimal(z, w);
 	for (int i = 0; i < 2; i++)
-		tryAddAnimal(z, &t);
+		tryAddAnimal(z, t);
 	for (int i = 0; i < 1; i++)
-		tryAddAnimal(z, &e);
+		tryAddAnimal(z, e);
 	wolk(z);
 	return 0;
 }

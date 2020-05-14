@@ -169,6 +169,30 @@ zoo::~zoo()
 	delete[]cages;
 }
 
+void zoo::soundCage(int _num) const
+{
+	if ((_num < 0) || (_num >= cageCount))
+		throw "Invalid value";
+	else
+		cages[_num]->sound();
+}
+
+void zoo::addAnimal(animal& a, int _num)
+{
+	if ((_num < 0) || (_num >= cageCount))
+		throw "Invalid value";
+	else
+		cages[_num]->addAnimal(&a);
+}
+
+void zoo::changeSize(int _num, int _size)
+{
+	if ((_num < 0) || (_num >= cageCount))
+		throw "Invalid value";
+	else
+		cages[_num]->changeSize(_size);
+}
+
 void zoo::addCages(int _count)
 {
 	if (_count <= 0)

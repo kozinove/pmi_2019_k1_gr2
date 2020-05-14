@@ -63,11 +63,14 @@ public:
 class zoo
 {
 	int cageCount;
-public:
 	cage** cages;
+public:
 	zoo(int _count = 10, int _initSize = 2);
 	zoo(const zoo& z);
 	~zoo();
+	void addAnimal(animal& a, int _num);
+	void changeSize(int _num, int _size);
 	void addCages(int _count = 1);
+	void soundCage(int _num) const;
 	void delCage(int _num);
 };
