@@ -8,13 +8,13 @@ bool animal::isPredator() const
 
 animal::animal(bool type) : predator(type) {};
 
-cell::cell(int _size): size(_size)
+cage::cage(int _size): size(_size)
 {
 	an = new animal*[size];
 	count = 0;
 }
 
-cell::cell(const cell& c)
+cage::cage(const cage& c)
 {
 	count = c.count;
 	size = c.size;
@@ -25,22 +25,52 @@ cell::cell(const cell& c)
 	}
 }
 
-cell::~cell()
+cage::~cage()
 {
-	if (count != 0)
-		delete[]an;
+	delete[]an;
 }
 
-int cell::getCount() const
+void cage::copy(const cage& original)
+{
+	delete[]an;
+	size = original.size;
+	count = original.count;
+	for (int i = 0; i < count; i++)
+		an[i] = original.an[i];
+}
+
+int cage::getCount() const
 {
 	return count;
 }
 
-void cell::addAnimal(animal* a)
+int cage::getSize() const
+{
+	return size;
+}
+
+void cage::changeSize(int _size)
+{
+	if (_size < count)
+		throw "The new cage doesn't have enough space\n";
+	else
+	{
+		animal** temp = new animal * [count];
+		for (int i = 0; i < count; i++)
+			temp[i] = an[i];
+		delete[]an;
+		size = _size;
+		an = new animal * [_size];
+		for (int i = 0; i < count; i++)
+			an[i] = temp[i];
+	}
+}
+
+void cage::addAnimal(animal* a)
 {
 	if (count == size)
 	{
-		throw "There is no room for the animal in the cage(cell)\n";
+		throw "There is no room for the animal in the cage(cage)\n";
 	}
 	if (count == 0)
 	{
@@ -68,7 +98,7 @@ void cell::addAnimal(animal* a)
 	}
 }
 
-void cell::sound() const
+void cage::sound() const
 {
 	if (count != 0)
 	{
@@ -110,19 +140,67 @@ void tiger::sound() const
 
 tiger::tiger() : animal(true) {};
 
-zoo::zoo(int _count): cellCount(_count)
+zoo::zoo(int _count, int _initSize): cageCount(_count)
 {
-	cells = new cell[cellCount];
+	cages = new cage*[cageCount];
+	for (int i = 0; i < cageCount; i++)
+	{
+		cages[i] = new cage(_initSize);
+	}
 }
 
 zoo::zoo(const zoo& z)
 {
-	cells = new cell[cellCount];
+	cageCount = z.cageCount;
+	cages = new cage*[cageCount];
 	for (int i = 0; i < 10; i++)
-		cells[i] = z.cells[i];
+	{
+		cages[i] = new cage(z.cages[i]->getSize());
+		cages[i]->copy(*(z.cages[i]));
+	}
 }
 
 zoo::~zoo()
 {
-	delete[]cells;
+	for (int i = 0; i < cageCount; i++)
+	{
+		delete cages[i];
+	}
+	delete[]cages;
+}
+
+void zoo::addCages(int _count)
+{
+	if (_count <= 0)
+		throw "Incorrect value\n";
+	else
+	{
+		cage** temp = new cage * [cageCount];
+		for (int i = 0; i < cageCount; i++)
+			temp[i] = cages[i];
+		delete[]cages;
+		cages = new cage * [cageCount + _count];
+		for (int i = 0; i < cageCount; i++)
+			cages[i] = temp[i];
+		cageCount += _count;
+	}
+}
+
+void zoo::delCage(int _num)
+{
+	if ((_num < 0) || (_num >= cageCount))
+		throw "Invalid value\n";
+	else
+	{
+		cage** temp = new cage * [cageCount - 1];
+		for (int i = 0; i < _num; i++)
+			temp[i] = cages[i];
+		for (int i = _num + 1; i < cageCount; i++)
+			temp[i] = cages[i];
+		delete[]cages;
+		cageCount --;
+		cages = new cage * [cageCount];
+		for (int i = 0; i < cageCount; i++)
+			cages[i] = temp[i];
+	}
 }

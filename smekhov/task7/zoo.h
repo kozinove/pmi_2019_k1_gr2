@@ -10,7 +10,7 @@ public:
 	animal(bool _type);
 };
 
-class cell
+class cage
 {
 private:
 	animal** an;
@@ -19,10 +19,13 @@ private:
 public:
 	void addAnimal(animal* a);
 	void sound() const;
-	cell(int _size = 2);
-	cell(const cell& c);
-	~cell();
+	cage(int _size = 2);
+	cage(const cage& c);
+	~cage();
+	void copy(const cage& original);
 	int getCount() const;
+	int getSize() const;
+	void changeSize(int _size);
 };
 
 class wolf : public animal
@@ -59,11 +62,12 @@ public:
 
 class zoo
 {
-	int cellCount;
-	int sizeCell;
+	int cageCount;
 public:
-	cell* cells;
-	zoo(int _count = 10);
+	cage** cages;
+	zoo(int _count = 10, int _initSize = 2);
 	zoo(const zoo& z);
 	~zoo();
+	void addCages(int _count = 1);
+	void delCage(int _num);
 };
