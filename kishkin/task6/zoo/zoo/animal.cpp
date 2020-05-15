@@ -1,7 +1,16 @@
 #include "animal.h"
 #include <iostream>
 
-#define N 10 // number of cells
+
+animal::animal() : predator(false) {}
+
+animal::animal(bool _predator) : predator(_predator) {}
+
+animal::animal(const animal& an) {
+	predator = an.predator;
+}
+
+
 
 
 cell::cell() {
@@ -21,6 +30,14 @@ void cell::addAnimal(animal* an) {
 		empty = false;
 		anim[count] = an;
 		count++;
+	}
+	else {
+		if ((anim[count - 1]->getPred() == 0) && (an->getPred() == 0)) {
+			anim[count] = an;
+			count++;
+		}
+		else
+			throw exceptionAnimal("herbivoreAndPredator");
 	}
 }
 
@@ -42,6 +59,39 @@ void cell::sound() const {
 	}
 }
 
+bool* cell::getPredArr(bool* arr) const {
+	if (!empty) {
+		for (int i = 0; i < this->getCount(); i++)
+			arr[i] = anim[i]->getPred();
+	}
+	else {
+		std::cout << "empty cell\n";
+	}
+
+	return arr;
+}
+
+
+
+
+tiger::tiger() : animal(true) {}
+kangaroo::kangaroo() : animal(false) {}
+bear::bear() : animal (true) {}
+
+
+tiger::tiger(const tiger& t) {
+	predator = t.predator;
+}
+
+kangaroo::kangaroo(const kangaroo& k) {
+	predator = k.predator;
+}
+
+bear::bear(const bear& b) {
+	predator = b.predator;
+}
+
+
 void tiger::sound() {
 	std::cout << "\'aaarrrr\' (tiger)\n";
 }
@@ -53,6 +103,21 @@ void kangaroo::sound() {
 void bear::sound() {
 	std::cout << "\'aarrrkhh\' (bear)\n";
 }
+
+
+bool tiger::getPred() {
+	return predator;
+}
+
+bool kangaroo::getPred() {
+	return predator;
+}
+
+bool bear::getPred() {
+	return predator;
+}
+
+
 
 
 
@@ -68,4 +133,16 @@ zoo::zoo(const zoo& z) {
 
 zoo::~zoo() {
 	delete[] cells;
+}
+
+
+
+exceptionAnimal::exceptionAnimal(std::string _name) : name(_name) {}
+
+void exceptionAnimal::setName(std::string _name) {
+	name = _name;
+}
+
+std::string exceptionAnimal::getName() {
+	return name;
 }
