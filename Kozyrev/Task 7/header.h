@@ -6,6 +6,7 @@ class animal
 {
 public:
 	virtual void voice() const = 0;
+	virtual bool checkpredator() const = 0;
 };
 
 
@@ -17,6 +18,7 @@ class cage
 	bool empty2;
 public:
 	cage();
+	animal* get_a1();
 	void addiction1(animal* _a1);
 	void addiction2(animal* _a2);
 	void voice() const;
@@ -27,24 +29,28 @@ class lion : public animal
 {
 public:
 	virtual void voice() const;
+	virtual bool checkpredator() const;
 };
 
 class tiger : public animal
 {
 public:
 	virtual void voice() const;
+	virtual bool checkpredator() const;
 };
 
 class rabbit : public animal
 {
 public:
 	virtual void voice() const;
+	virtual bool checkpredator() const;
 };
 
 class raccoon : public animal
 {
 public:
 	virtual void voice() const;
+	virtual bool checkpredator() const;
 };
 
 
