@@ -73,7 +73,7 @@ void zoo::entercages()
 		}
 		else
 		{
-			animal* an = &rab;
+			animal* an = &zer;
 			if (b == 1)
 			{
 				an = &lio;
@@ -108,7 +108,7 @@ void zoo::entercages()
 			}
 			else
 			{
-				animal* an = &rab;
+				animal* an = &zer;
 				if (b == 1)
 				{
 					an = &lio;
@@ -198,6 +198,15 @@ void raccoon::voice() const
 	cout << "Raccoon   ";
 }
 bool raccoon::checkpredator() const
+{
+	return false;
+}
+
+void zero::voice() const
+{
+	cout << "Zero      ";
+}
+bool zero::checkpredator() const
 {
 	return false;
 }

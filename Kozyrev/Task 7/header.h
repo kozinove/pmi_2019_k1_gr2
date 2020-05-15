@@ -53,6 +53,13 @@ public:
 	virtual bool checkpredator() const;
 };
 
+class zero : public animal
+{
+public:
+	virtual void voice() const;
+	virtual bool checkpredator() const;
+};
+
 
 class zoo
 {
@@ -60,6 +67,7 @@ class zoo
 	tiger tig;
 	rabbit rab;
 	raccoon rac;
+	zero zer;
 	cage cages[10];
 public:
 	void entercages();
