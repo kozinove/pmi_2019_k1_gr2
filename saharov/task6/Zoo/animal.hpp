@@ -37,27 +37,48 @@ class snake: public animal
 
 class box
 {
-//    animal *a;
-    bool emphy;
-public:
     animal *a;
-    void _emphy();
-    void add(animal *_a);
+    bool emphy;
+
+    tiger t;
+    bird b;
+    snake s;
+public:
+    void add(animal *_a)
+    {
+        if(emphy)
+        {
+            emphy = false;
+            a = _a;
+        }
+    }
+    animal* getA()
+    {
+        return a;
+    }
     void sound()
     {
         if(emphy)
             cout << "no sound" << endl;
         else
-            a -> sound() ;
+            a -> sound();
     }
+
+    void _emphy();
+    box* init();
 };
 
-class zoo: public box
+class zoo
 {
-public:
     box *boxes;
+public:
+
     zoo(box *_boxes);
-    //void sound();
+    void walk()
+    {
+        for(int i = 0; i < 10; i ++)
+            boxes[i].sound();
+    }
 
     ~zoo();
 };
