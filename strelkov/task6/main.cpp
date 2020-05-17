@@ -6,14 +6,13 @@ int main()
 	parrot p;
 	monkey m;
 	zoo z;
-	z.cages[0].addAnimal(&l);
-	z.cages[1].addAnimal(&l);
-	z.cages[3].addAnimal(&p);
-	z.cages[6].addAnimal(&p);
-	z.cages[7].addAnimal(&m);
-	z.cages[8].addAnimal(&m);
-	z.cages[9].addAnimal(&m);
-
+	z.get(0,&l);
+	z.get(1,&l);
+	z.get(3,&p);
+	z.get(6,&p);
+	z.get(7,&m);
+	z.get(8,&m);
+	z.get(9,&p);
 	z.walk();
 
 	return 0;

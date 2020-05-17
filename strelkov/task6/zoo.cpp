@@ -11,18 +11,6 @@ void animal::voice()
 
 }
 
-void cage::addAnimal(animal* _an)
-{
-	emp = 1;
-	an = _an;
-}
-void cage::voice()
-{
-	if (emp == 0)
-		cout << "empty" << endl;
-	else
-		an->voice();
-}
 void lion::voice()
 {
 
@@ -42,6 +30,25 @@ void parrot::voice()
 
 }
 
+
+void zoo::get(int n, animal* an)
+{
+	cages[n].addAnimal(an);
+	
+}
+
+void cage::addAnimal(animal* _an)
+{
+	emp = 1;
+	an = _an;
+}
+void cage::voice()
+{
+	if (emp == 0)
+		cout << "empty" << endl;
+	else
+		an->voice();
+}
 
 void zoo::walk()
 {

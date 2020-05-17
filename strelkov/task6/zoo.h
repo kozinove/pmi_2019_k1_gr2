@@ -13,13 +13,13 @@ public:
 
 class cage
 {
-
+	animal* an;
 	int emp;
 public:
 	cage();
 	void voice();
 	void addAnimal(animal* _an);
-	animal* an;
+	
 };
 
 class lion : public animal
@@ -41,9 +41,13 @@ class parrot : public animal
 public:
 	virtual void voice();
 };
-class zoo
-{
+class zoo :public cage
+{	
+	
 public:
-	cage cages[10];
+	void get(int n, animal* an);
 	void walk();
+private:
+	cage cages[10];
+
 };
