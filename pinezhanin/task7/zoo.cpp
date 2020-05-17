@@ -1,5 +1,10 @@
 #include"zoo.h"
 
+void zoo::addAnim(int a, animal* an)
+{
+    massCage[a].addAnim(an);
+}
+
 bool animal::getPredator() const
 {
     return predator;

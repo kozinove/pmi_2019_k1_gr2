@@ -11,7 +11,7 @@ public:
     virtual void voice() const = 0;
     bool getPredator() const;
 
-protected:
+private:
     bool predator;
 };
 
@@ -31,9 +31,10 @@ public:
 class zoo
 {
 public:
-    cage massCage[10];
-
     void checkAllCage() const;
+    void addAnim(int a, animal* an);
+private:
+    cage massCage[10];
 
 };
 

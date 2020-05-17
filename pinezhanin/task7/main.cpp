@@ -21,10 +21,10 @@ int main()
         cin >> num;
         if (num <= 0) break;
 
-        if (numAn == 1) ZooPark.massCage[num-1].addAnim(&w);
-        if (numAn == 2) ZooPark.massCage[num-1].addAnim(&t);
-        if (numAn == 3) ZooPark.massCage[num-1].addAnim(&s);
-        if (numAn == 4) ZooPark.massCage[num-1].addAnim(&d);
+        if (numAn == 1) ZooPark.addAnim(num-1, &w);
+        if (numAn == 2) ZooPark.addAnim(num-1, &t);
+        if (numAn == 3) ZooPark.addAnim(num-1, &s);
+        if (numAn == 4) ZooPark.addAnim(num-1, &d);
     }
 
     ZooPark.checkAllCage();
