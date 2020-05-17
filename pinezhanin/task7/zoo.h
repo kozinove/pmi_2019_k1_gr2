@@ -7,9 +7,12 @@ using namespace std;
 class animal
 {
 public:
-    animal(bool b):isPredator(b){};
+    animal(bool b):predator(b){};
     virtual void voice() const = 0;
-    bool isPredator;
+    bool getPredator() const;
+
+protected:
+    bool predator;
 };
 
 class cage
@@ -20,7 +23,7 @@ class cage
     bool empty2;
 public:
     cage();
-    
+
     void addAnim(animal* an);
     void voice() const;
 };

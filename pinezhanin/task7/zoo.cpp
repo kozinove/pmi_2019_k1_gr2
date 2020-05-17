@@ -1,5 +1,9 @@
 #include"zoo.h"
 
+bool animal::getPredator() const
+{
+    return predator;
+}
 
 void zoo::checkAllCage() const
 {
@@ -27,21 +31,21 @@ void cage::addAnim(animal* an)
             }
             else
             {
-                if (an->isPredator)
+                if (an->getPredator())
                 {
-                    if (animInCage1->isPredator)
+                    if (animInCage1->getPredator())
                         throw "You can't put a predator to a predator";
-                    if (!animInCage1->isPredator)
+                    if (!animInCage1->getPredator())
                         throw "You can't put a predator to a herbivore";
                 }
                 else
                 {
-                    if (animInCage1->isPredator == false)
+                    if (animInCage1->getPredator() == false)
                     {
                         animInCage2 = an;
                         empty2 = false;
                     }
-                    if (animInCage1->isPredator)
+                    if (animInCage1->getPredator())
                         throw "You can't put a herbivore to a predator";
                 }
             }
@@ -49,7 +53,7 @@ void cage::addAnim(animal* an)
         }
         else
         {
-            if (an->isPredator)
+            if (an->getPredator())
             {
                 if (empty2)
                 {
@@ -58,21 +62,21 @@ void cage::addAnim(animal* an)
                 }
                 else
                 {
-                    if (animInCage2->isPredator)
+                    if (animInCage2->getPredator())
                         throw "You can't put a predator to a predator";
-                    if (!animInCage2->isPredator)
+                    if (!animInCage2->getPredator())
                         throw "You can't put a predator to a herbivore";
                 }
             }
             else
             {
-                if (empty2 || animInCage2->isPredator == false)
+                if (empty2 || animInCage2->getPredator() == false)
                 {
                     animInCage1 = an;
                     empty1 = false;
                 }
                 else          
-                    if (animInCage2->isPredator)
+                    if (animInCage2->getPredator())
                         throw "You can't put a herbivore to a predator";
             }
 
