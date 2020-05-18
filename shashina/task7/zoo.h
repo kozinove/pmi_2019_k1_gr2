@@ -9,7 +9,7 @@ public:
     bool predator;
     animal();
     animal(bool pray);
-    animal(const animal& an);
+    animal(const animal &an);
     virtual void voice() = 0;
     virtual bool getpray() = 0;
 };
@@ -75,6 +75,4 @@ public:
     string getname();
 };
 
-void tryhorse(horse *h, zoo *z);
-void trydonkey(donkey *d, zoo *z);
-void tryowl(owl *o, zoo *z);
+void tryAnimal(animal *an, zoo *z);

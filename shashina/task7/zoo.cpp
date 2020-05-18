@@ -68,14 +68,15 @@ void cell::animalzoo(animal *an)
         beast[qty] = an;
         qty++;
     }
-    else {
-        if (((*beast[qty - 1]).getpray() == 0) && ((*an).getpray() == 0))
+    else
+    {
+        if ((*beast[qty-1]).getpray() && (*an).getpray())
             {
                 beast[qty] = an;
                 qty++;
             }
         else
-            throw excess("here is predator or herbivore");
+            throw excess("- here is predator or herbivore");
     }
 }
 int cell::getqry()
@@ -86,7 +87,7 @@ void cell::voice()
 {
     if (!f)
     {
-        for (int i = 0; i < (*this).getqry(); i++)
+        for (int i = 0; i < getqry(); i++)
             (*beast[i]).voice();
     }
     else
@@ -127,40 +128,15 @@ string excess::getname()
     return name;
 }
 
-void tryhorse(horse *h, zoo *z)
+void tryAnimal(animal *an, zoo *z)
 {
     try
     {
         for (int i = 0; i < 6; i++)
-            (*z).cells[rand() % 10].animalzoo(h);
+            (*z).cells[rand() % 10].animalzoo(an);
     }
     catch (excess &err)
     {
-        cout << "conflict with horse: " << err.getname() << "\n";
-    }
-}
-void trydonkey(donkey *d, zoo *z)
-{
-    try
-    {
-        for (int i = 0; i < 5; i++)
-            (*z).cells[rand() % 10].animalzoo(d);
-    }
-    catch (excess &err)
-    {
-        cout << "conflict with donkey: " << err.getname() << "\n";
-    }
-}
-void tryowl(owl *o, zoo *z)
-{
-    int i;
-    try
-    {
-        for ( i = 0; i < 7; i++)
-            (*z).cells[rand() % 10].animalzoo(o);
-    }
-    catch (excess &err)
-    {
-        cout << "conflict with owl: " << err.getname() << "\n";
+        cout << "conflict " << err.getname() << "\n";
     }
 }

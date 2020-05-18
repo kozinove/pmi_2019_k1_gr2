@@ -8,9 +8,9 @@ int main()
     owl o;
     zoo z;
 
-    tryhorse(&h, &z);
-    trydonkey(&d, &z);
-    tryowl(&o, &z);
+         tryAnimal(&h, &z);
+         tryAnimal(&d, &z);
+         tryAnimal(&o, &z);
 
     z.walk(z);
 
