@@ -5,8 +5,9 @@ using namespace std;
 
 class animal
 {
-public:
+protected:
     bool predator;
+public:
     animal();
     animal(bool pray);
     animal(const animal &an);
@@ -56,12 +57,14 @@ public:
 };
 class zoo
 {
-public:
+private:
     cell *cells;
+public:
     zoo();
     zoo(const zoo &z);
     ~zoo();
-    void walk(const zoo &z);
+    void walk();
+    void tryAnimal(animal *an, zoo *z);
 };
 
 class excess

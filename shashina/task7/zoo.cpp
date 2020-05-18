@@ -70,7 +70,7 @@ void cell::animalzoo(animal *an)
     }
     else
     {
-        if ((*beast[qty-1]).getpray() && (*an).getpray())
+        if (beast[qty-1]->getpray() && an->getpray())
             {
                 beast[qty] = an;
                 qty++;
@@ -88,7 +88,7 @@ void cell::voice()
     if (!f)
     {
         for (int i = 0; i < getqry(); i++)
-            (*beast[i]).voice();
+            beast[i]->voice();
     }
     else
         cout << "no one is here \n";
@@ -108,13 +108,24 @@ zoo::~zoo()
 {
     delete[] cells;
 }
-
-void zoo::walk(const zoo &z)
+void zoo::walk()
 {
     for (int i = 0; i < 10; i++)
     {
         cout << i + 1 << " cell:\n";
-        z.cells[i].voice();
+        cells[i].voice();
+    }
+}
+void zoo::tryAnimal(animal *an, zoo *z)
+{
+    try
+    {
+        for (int i = 0; i < 6; i++)
+            z->cells[rand() % 10].animalzoo(an);
+    }
+    catch (excess &err)
+    {
+        cout << "conflict " << err.getname() << "\n";
     }
 }
 
@@ -126,17 +137,4 @@ void excess::setname(string n)
 string excess::getname()
 {
     return name;
-}
-
-void tryAnimal(animal *an, zoo *z)
-{
-    try
-    {
-        for (int i = 0; i < 6; i++)
-            (*z).cells[rand() % 10].animalzoo(an);
-    }
-    catch (excess &err)
-    {
-        cout << "conflict " << err.getname() << "\n";
-    }
 }
