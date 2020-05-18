@@ -64,7 +64,7 @@ public:
     zoo(const zoo &z);
     ~zoo();
     void walk();
-    void tryAnimal(animal *an, zoo *z);
+    void tryAnimal(animal *an);
 };
 
 class excess
@@ -73,9 +73,6 @@ private:
     string name;
 public:
     excess(string n);
-
     void setname(string n);
     string getname();
 };
-
-void tryAnimal(animal *an, zoo *z);

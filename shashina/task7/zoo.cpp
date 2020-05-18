@@ -116,12 +116,12 @@ void zoo::walk()
         cells[i].voice();
     }
 }
-void zoo::tryAnimal(animal *an, zoo *z)
+void zoo::tryAnimal(animal *an)
 {
     try
     {
         for (int i = 0; i < 6; i++)
-            z->cells[rand() % 10].animalzoo(an);
+            cells[rand() % 10].animalzoo(an);
     }
     catch (excess &err)
     {
