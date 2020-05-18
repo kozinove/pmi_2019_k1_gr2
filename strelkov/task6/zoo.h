@@ -41,7 +41,7 @@ class parrot : public animal
 public:
 	virtual void voice();
 };
-class zoo :public cage
+class zoo 
 {	
 	
 public:
