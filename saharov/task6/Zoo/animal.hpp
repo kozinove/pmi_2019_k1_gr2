@@ -39,10 +39,6 @@ class box
 {
     animal *a;
     bool emphy;
-
-    tiger t;
-    bird b;
-    snake s;
 public:
     void add(animal *_a)
     {
@@ -65,21 +61,19 @@ public:
     }
 
     void _emphy();
-    box* init();
+
 };
 
 class zoo
 {
-    box *boxes;
+    box boxes[10];
+
+    tiger t;
+    bird b;
+    snake s;
 public:
+    zoo();
+    void walk();
 
-    zoo(box *_boxes);
-    void walk()
-    {
-        for(int i = 0; i < 10; i ++)
-            boxes[i].sound();
-    }
-
-    ~zoo();
 };
 

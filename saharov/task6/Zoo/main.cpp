@@ -5,9 +5,7 @@
 int main()
 {
 
-    box *_boxes;
-    _boxes -> init();
-    zoo z(_boxes);
+    zoo z;
     z.walk();
 
     return 0;
