@@ -4,39 +4,40 @@
 
 animal::animal() : predator(false) {}
 animal::animal(bool _predator) : predator(_predator) {}
-animal::animal(const animal& an)
+animal::animal(const animal& a)
 {
-	predator = an.predator;
+	predator = a.predator;
 }
 
-cell::cell() {
+cell::cell() 
+{
 	empty = true;
 	count = 0;
 }
-
-cell::cell(const cell& c) {
+cell::cell(const cell& c)
+{
 	empty = c.empty;
 	count = c.count;
 	for (int i = 0; i < c.count; i++)
 		anim[i] = c.anim[i];
 }
 
-void cell::addAnimal(animal* an) {
+void cell::addAnimal(animal* a)
+{
 	if (empty) {
 		empty = false;
-		anim[count] = an;
+		anim[count] = a;
 		count++;
 	}
  	else {
-		if ((anim[count - 1]->getPred() == false) && (an->getPred() == false)) {
-			anim[count] = an;
+		if ((anim[count - 1]->getPred() == false) && (a->getPred() == false)) {
+			anim[count] = a;
 			count++;
 		}
 		else
 			throw "animal_incompatibility";
 	}
 }
-
 
 int cell::get_count() const 
 {
