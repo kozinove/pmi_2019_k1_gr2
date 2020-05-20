@@ -69,8 +69,16 @@ class box
     int countAn;
     animal *a1;
     animal *a2;
-public:
 
+    tiger t;
+    bird b;
+    snake s;
+    rabbit r;
+public:
+    animal &take_tiger() {return t;}
+    animal &take_bird() {return b;}
+    animal &take_snake() {return s;}
+    animal &take_rabbit() {return r;}
     void add(animal *_a);
     void sound();
     void emphy();
@@ -81,10 +89,6 @@ class zoo
 {
     box boxes[10];
 
-    tiger t;
-    bird b;
-    snake s;
-    rabbit r;
 public:
     zoo();
     void walk();

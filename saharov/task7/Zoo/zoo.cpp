@@ -65,16 +65,18 @@ zoo::zoo()
 {
     for(int i = 0; i < 10; i ++)
         boxes[i].emphy();
+
+
     for(int i = 0; i < 10; i ++)
     {
         int temp = rand()%10 + 0;
-        boxes[temp].add(&b);
+        boxes[temp].add(&boxes[temp].take_bird());
         temp = rand()%10 + 0;
-        boxes[temp].add(&t);
+        boxes[temp].add(&boxes[temp].take_tiger());
         temp = rand()%9 + 0;
-        boxes[temp].add(&s);
+        boxes[temp].add(&boxes[temp].take_snake());
         temp = rand()%8 + 0;
-        boxes[temp].add(&r);
+        boxes[temp].add(&boxes[temp].take_rabbit());
     }
 
 }
