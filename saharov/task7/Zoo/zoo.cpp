@@ -24,7 +24,7 @@ void box::add(animal *_a)
 void box::check()
 {
     if(countAn == 2)
-        if((a1->predator == true)||(a2->predator == true))
+        if((a1->getPr() == true)||(a2->getPr() == true))
             throw "predator no one";
     try
     {
