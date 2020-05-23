@@ -7,14 +7,27 @@ using namespace std;
 
 class animal
 {
-public:
     bool predator;
+public:
+    void pred()
+    {
+        predator = true;
+    }
+    void no_pred()
+    {
+        predator = false;
+    }
+    bool getPr()
+    {
+        return predator;
+    }
     virtual void sound() = 0;
 };
 
 class bird: public animal
 {
-    bool predator = false;
+public:
+    no_pred();
     void sound() override
     {
         cout << "Chick-chi-rick" << '\t';
@@ -23,7 +36,8 @@ class bird: public animal
 
 class tiger: public animal
 {
-    bool predator = true;
+public:
+    pred();
     void sound() override
     {
          cout << "Ur           " << '\t';
@@ -32,7 +46,8 @@ class tiger: public animal
 
 class snake: public animal
 {
-    bool predator = true;
+public:
+    pred();
     void sound() override
     {
          cout << "Shh          " << '\t';
@@ -41,7 +56,8 @@ class snake: public animal
 
 class rabbit: public animal
 {
-    bool predator = false;
+public:
+    no_pred();
     void sound() override
     {
         cout << "Jump-jump     " << '\t';
@@ -53,8 +69,8 @@ class box
     int countAn;
     animal *a1;
     animal *a2;
-public:
 
+public:
     void add(animal *_a);
     void sound();
     void emphy();
@@ -65,12 +81,10 @@ class zoo
 {
     box boxes[10];
 
-    tiger t;
-    bird b;
-    snake s;
-    rabbit r;
 public:
     zoo();
+    void addAn(int i, animal *_a);
+    void create(animal *_b, animal *_t, animal *_s, animal *_r);
     void walk();
 
 };

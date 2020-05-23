@@ -24,7 +24,7 @@ void box::add(animal *_a)
 void box::check()
 {
     if(countAn == 2)
-        if((a1->predator == true)||(a2->predator == true))
+        if((a1->getPr() == true)||(a2->getPr() == true))
             throw "predator no one";
     try
     {
@@ -61,20 +61,28 @@ void zoo::walk()
     }
 }
 
+void zoo::addAn(int i, animal *_a)
+{
+    boxes[i].add(_a);
+}
+
 zoo::zoo()
 {
     for(int i = 0; i < 10; i ++)
         boxes[i].emphy();
+}
+
+void zoo::create(animal *_b, animal *_t, animal *_s, animal *_r)
+{
     for(int i = 0; i < 10; i ++)
     {
         int temp = rand()%10 + 0;
-        boxes[temp].add(&b);
+        addAn(temp, _b);
         temp = rand()%10 + 0;
-        boxes[temp].add(&t);
+        addAn(temp, _t);
         temp = rand()%9 + 0;
-        boxes[temp].add(&s);
+        addAn(temp, _s);
         temp = rand()%8 + 0;
-        boxes[temp].add(&r);
+        addAn(temp, _r);
     }
-
 }
