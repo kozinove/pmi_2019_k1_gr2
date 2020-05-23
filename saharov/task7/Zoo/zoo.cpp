@@ -56,12 +56,17 @@ void zoo::walk()
     for(int i = 0; i < 10; i ++)
     {
         cout << "box:" << i << " ";
-        boxes[i].check();
+        //boxes[i].check();
         boxes[i].sound();
     }
 }
 
-zoo::zoo()
+void zoo::addAn(int i, animal *_a)
+{
+    boxes[i].add(_a);
+}
+
+zoo::zoo(animal *_b, animal *_t, animal *_s, animal *_r)
 {
     for(int i = 0; i < 10; i ++)
         boxes[i].emphy();
@@ -70,13 +75,13 @@ zoo::zoo()
     for(int i = 0; i < 10; i ++)
     {
         int temp = rand()%10 + 0;
-        boxes[temp].add(&boxes[temp].take_bird());
+        addAn(temp, _b);
         temp = rand()%10 + 0;
-        boxes[temp].add(&boxes[temp].take_tiger());
+        addAn(temp, _t);
         temp = rand()%9 + 0;
-        boxes[temp].add(&boxes[temp].take_snake());
+        addAn(temp, _s);
         temp = rand()%8 + 0;
-        boxes[temp].add(&boxes[temp].take_rabbit());
+        addAn(temp, _r);
     }
 
 }
