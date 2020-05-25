@@ -26,8 +26,7 @@ cage::cage()
 
 void cage::inner(beast* moo)
 {
-    try
-    {
+    
         if (!freedom1)
         {
             if (!freedom2)
@@ -87,13 +86,9 @@ void cage::inner(beast* moo)
 
         }
     }
-    catch (const char* str)
-    {
-        cout << str << '\n';
-        cout << "try again\n";
-    }
+  
 
-}
+
 
 void cage::scream() const
 {
