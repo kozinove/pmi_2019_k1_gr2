@@ -77,6 +77,8 @@ public:
     void check();
 };
 
+
+
 class zoo
 {
     box boxes[10];

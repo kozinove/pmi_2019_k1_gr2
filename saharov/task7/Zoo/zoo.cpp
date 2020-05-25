@@ -61,6 +61,8 @@ void zoo::walk()
     }
 }
 
+
+
 void zoo::addAn(int i, animal *_a)
 {
     boxes[i].add(_a);
