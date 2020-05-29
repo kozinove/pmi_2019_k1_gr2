@@ -25,9 +25,9 @@ int NOD(int a, int b)
 void rat::sokr()
 {
 	int p;
-	int num, den;
-	num = ch;
-	den = zn;                         //sokrachenie
+	int a, b;
+	a = ch;
+	b = zn;                         //sokrachenie
 	if (ch > zn)
 	{
 		p = NOD(ch, zn);
