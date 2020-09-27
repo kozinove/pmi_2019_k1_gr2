@@ -1,0 +1,10 @@
+^G:\УЧЕБА\АЛГОРИТМЫ\MP2-LAB1-SET-MASTER\MP2-LAB1-SET-MASTER\GTEST\CMAKELISTS.TXT
+setlocal
+G:\учеба\cmake-3.18.2-win64-x64\cmake-3.18.2-win64-x64\bin\cmake.exe -SG:/учеба/алгоритмы/mp2-lab1-set-master/mp2-lab1-set-master -BG:/учеба/pmi_2019_k1_gr2 --check-stamp-file G:/учеба/pmi_2019_k1_gr2/gtest/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

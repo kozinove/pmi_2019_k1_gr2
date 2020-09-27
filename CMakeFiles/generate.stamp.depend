@@ -1,0 +1,23 @@
+# CMake generation dependency list for this directory.
+G:/учеба/cmake-3.18.2-win64-x64/cmake-3.18.2-win64-x64/share/cmake-3.18/Modules/CMakeCInformation.cmake
+G:/учеба/cmake-3.18.2-win64-x64/cmake-3.18.2-win64-x64/share/cmake-3.18/Modules/CMakeCXXInformation.cmake
+G:/учеба/cmake-3.18.2-win64-x64/cmake-3.18.2-win64-x64/share/cmake-3.18/Modules/CMakeCommonLanguageInclude.cmake
+G:/учеба/cmake-3.18.2-win64-x64/cmake-3.18.2-win64-x64/share/cmake-3.18/Modules/CMakeGenericSystem.cmake
+G:/учеба/cmake-3.18.2-win64-x64/cmake-3.18.2-win64-x64/share/cmake-3.18/Modules/CMakeInitializeConfigs.cmake
+G:/учеба/cmake-3.18.2-win64-x64/cmake-3.18.2-win64-x64/share/cmake-3.18/Modules/CMakeLanguageInformation.cmake
+G:/учеба/cmake-3.18.2-win64-x64/cmake-3.18.2-win64-x64/share/cmake-3.18/Modules/CMakeRCInformation.cmake
+G:/учеба/cmake-3.18.2-win64-x64/cmake-3.18.2-win64-x64/share/cmake-3.18/Modules/CMakeSystemSpecificInformation.cmake
+G:/учеба/cmake-3.18.2-win64-x64/cmake-3.18.2-win64-x64/share/cmake-3.18/Modules/CMakeSystemSpecificInitialize.cmake
+G:/учеба/cmake-3.18.2-win64-x64/cmake-3.18.2-win64-x64/share/cmake-3.18/Modules/Compiler/CMakeCommonCompilerMacros.cmake
+G:/учеба/cmake-3.18.2-win64-x64/cmake-3.18.2-win64-x64/share/cmake-3.18/Modules/Compiler/MSVC-C.cmake
+G:/учеба/cmake-3.18.2-win64-x64/cmake-3.18.2-win64-x64/share/cmake-3.18/Modules/Compiler/MSVC-CXX.cmake
+G:/учеба/cmake-3.18.2-win64-x64/cmake-3.18.2-win64-x64/share/cmake-3.18/Modules/Platform/Windows-MSVC-C.cmake
+G:/учеба/cmake-3.18.2-win64-x64/cmake-3.18.2-win64-x64/share/cmake-3.18/Modules/Platform/Windows-MSVC-CXX.cmake
+G:/учеба/cmake-3.18.2-win64-x64/cmake-3.18.2-win64-x64/share/cmake-3.18/Modules/Platform/Windows-MSVC.cmake
+G:/учеба/cmake-3.18.2-win64-x64/cmake-3.18.2-win64-x64/share/cmake-3.18/Modules/Platform/Windows.cmake
+G:/учеба/cmake-3.18.2-win64-x64/cmake-3.18.2-win64-x64/share/cmake-3.18/Modules/Platform/WindowsPaths.cmake
+G:/учеба/pmi_2019_k1_gr2/CMakeFiles/3.18.2/CMakeCCompiler.cmake
+G:/учеба/pmi_2019_k1_gr2/CMakeFiles/3.18.2/CMakeCXXCompiler.cmake
+G:/учеба/pmi_2019_k1_gr2/CMakeFiles/3.18.2/CMakeRCCompiler.cmake
+G:/учеба/pmi_2019_k1_gr2/CMakeFiles/3.18.2/CMakeSystem.cmake
+G:/учеба/алгоритмы/mp2-lab1-set-master/mp2-lab1-set-master/CMakeLists.txt

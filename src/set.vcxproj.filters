@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="G:\учеба\алгоритмы\mp2-lab1-set-master\mp2-lab1-set-master\src\tbitfield.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="G:\учеба\алгоритмы\mp2-lab1-set-master\mp2-lab1-set-master\src\tset.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="G:\учеба\алгоритмы\mp2-lab1-set-master\mp2-lab1-set-master\include\tbitfield.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="G:\учеба\алгоритмы\mp2-lab1-set-master\mp2-lab1-set-master\include\tset.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="G:\учеба\алгоритмы\mp2-lab1-set-master\mp2-lab1-set-master\src\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{560DDF35-99F3-395F-BA8A-30702BBBD249}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{D4794235-72E2-3967-8847-978AACC7607C}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

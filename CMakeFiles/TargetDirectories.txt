@@ -1,0 +1,6 @@
+G:/учеба/pmi_2019_k1_gr2/CMakeFiles/ALL_BUILD.dir
+G:/учеба/pmi_2019_k1_gr2/CMakeFiles/ZERO_CHECK.dir
+G:/учеба/pmi_2019_k1_gr2/src/CMakeFiles/set.dir
+G:/учеба/pmi_2019_k1_gr2/samples/CMakeFiles/sample_prime_numbers.dir
+G:/учеба/pmi_2019_k1_gr2/gtest/CMakeFiles/gtest.dir
+G:/учеба/pmi_2019_k1_gr2/test/CMakeFiles/test_set.dir
