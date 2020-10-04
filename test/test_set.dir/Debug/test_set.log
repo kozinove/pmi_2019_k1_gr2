@@ -1,4 +1,4 @@
-﻿  test_tbitfield.cpp
+﻿  test_tset.cpp
 G:\учеба\алгоритмы\mp2-lab1-set-master\mp2-lab1-set-master\gtest\gtest.h(9690,46): warning C4996:  'std::tr1': warning STL4002: The non-Standard std::tr1 namespace and TR1-only machinery are deprecated and will be REMOVED. You can define _SILENCE_TR1_NAMESPACE_DEPRECATION_WARNING to acknowledge that you have received this warning.
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\tuple(907): message :   см. объявление "std::tr1"
 G:\учеба\алгоритмы\mp2-lab1-set-master\mp2-lab1-set-master\gtest\gtest.h(9695,1): warning C4996:  'std::tr1': warning STL4002: The non-Standard std::tr1 namespace and TR1-only machinery are deprecated and will be REMOVED. You can define _SILENCE_TR1_NAMESPACE_DEPRECATION_WARNING to acknowledge that you have received this warning.
