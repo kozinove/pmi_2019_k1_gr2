@@ -1,0 +1,49 @@
+
+#include <iostream>
+#include <assert.h> 
+#include <stdlib.h> 
+using namespace std;
+ 
+class TriMat {
+    private:
+        int Size;   
+        int** M;
+    public:
+        TriMat(int n) {
+            Size = n;
+            M = (int**) malloc(Size * sizeof(int));
+            for (int k = 0; k < Size; k++) {
+                M[k] = (int*) malloc((Size - k) * sizeof(int));
+                for (int j = 0; j <= Size - 1 - k; j++)
+                    cin >> M[k][j];
+            }
+        }
+        
+        // Конструктор скалярной матрицы с заданным элементом на главной диагонали
+        TriMat(int n, int a) {
+            Size = n;
+            M = (int**) malloc(Size * sizeof(int));
+            for (int k = 0; k < Size; k++) {
+                M[k] = (int*) malloc((Size - k) * sizeof(int));
+                M[k][0] = a;
+            }
+        }
+        
+        void print() {
+            for (int k = 0; k < Size; k++) {
+                for (int j = 0; j < k; j++)
+                    cout << "\t";
+                for (int j = 0; j <= Size - 1 - k; j++)
+                    cout << M[k][j] << "\t";
+                cout << endl;
+            }
+      
+   
+        TriMat operator+ (TriMat B) {
+            TriMat C(Size);
+            for (int k = 0; k < Size; k++)
+                for (int j = 0; j <= Size - 1 - k; j++)
+                    C[k][j] = M[k][j] + B[k][j];
+            return C;
+        }
+        
