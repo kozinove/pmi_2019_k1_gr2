@@ -1,3 +1,0 @@
-﻿  tset.cpp
-G:\учеба\алгоритмы\mp2-lab1-set-master\mp2-lab1-set-master\src\tset.cpp(31): warning C4717:  TSet::operator TBitField: рекурсия на всех путях выполнения, функция вызовет переполнение стека
-  set.vcxproj -> G:\учеба\pmi_2019_k1_gr2\lib\Debug\set.lib
